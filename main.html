@@ -6,15 +6,24 @@
   </head>
   <body>
     <div id='app'>
-      <p v-once>VueJS is pretty cool - {{ name }} ({{ age }})</p>
-      <p>{{ age * 3 }}</p>
-      <p>{{ random() }}</p>
       <div>
-        <img v-bind:src="picture" style="width:100px;height:100px">
+        <button v-on:click="alertMe" type="button" name="button">Show Alert</button>
       </div>
       <div>
-        <input type="text" v-bind:value="name">
+        <input v-on:keydown="value = $event.target.value" type="text">
+        <p>{{ value }}</p>
       </div>
+      <div>
+        <input type="text" v-on:keydown.enter="value = $event.target.value">
+        <p>{{ value }}</p>
+      </div>
+      <!-- <button v-on:click="increase(2)">Click Me</button>
+      <p>{{ counter }}</p>
+      <p v-on:mousemove="updateCoordinates">
+        Coordinates: {{ x }} / {{ y }}
+        - <span v-on:mousemove.stop="">DEAD SPOT</span>
+      </p>
+      <input type="text" v-on:keyup.enter="alertMe"> -->
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
