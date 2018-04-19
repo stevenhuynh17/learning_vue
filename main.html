@@ -7,23 +7,11 @@
   <body>
     <div id='app'>
       <div>
-        <button v-on:click="alertMe" type="button" name="button">Show Alert</button>
+          <p>Current Value: {{ value }}</p>
+          <button @click="value += 5">Add 5</button>
+          <button @click="value += 1">Add 1</button>
+          <p>{{ result }}</p>
       </div>
-      <div>
-        <input v-on:keydown="value = $event.target.value" type="text">
-        <p>{{ value }}</p>
-      </div>
-      <div>
-        <input type="text" v-on:keydown.enter="value = $event.target.value">
-        <p>{{ value }}</p>
-      </div>
-      <!-- <button v-on:click="increase(2)">Click Me</button>
-      <p>{{ counter }}</p>
-      <p v-on:mousemove="updateCoordinates">
-        Coordinates: {{ x }} / {{ y }}
-        - <span v-on:mousemove.stop="">DEAD SPOT</span>
-      </p>
-      <input type="text" v-on:keyup.enter="alertMe"> -->
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>

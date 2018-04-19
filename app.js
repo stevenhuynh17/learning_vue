@@ -3,12 +3,17 @@ new Vue({
   data: {
     value: 0
   },
-  methods: {
-    showInfo: function(event) {
-      this.value = event.target.value
-    },
-    alertMe: function() {
-      alert('Alert!');
+  computed: {
+    result: function() {
+      return this.value === 37 ? "Done" : "Not there yet";
+    }
+  },
+  watch: {
+    result: function(value) {
+      var vm = this;
+      setTimeout(function() {
+        vm.value = 0
+      }, 2000);
     }
   }
 });
